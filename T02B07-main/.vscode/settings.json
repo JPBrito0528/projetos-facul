@@ -1,0 +1,18 @@
+{
+    "python.linting.enabled": true,
+    "python.jediEnabled": false,
+
+    // Loaded Stubs:  esp32-micropython-1.12.0 
+    "python.autoComplete.extraPaths": [".micropy\\BradenM-micropy-stubs-30e0f6e\\frozen", ".micropy\\BradenM-micropy-stubs-7696565\\frozen", ".micropy\\BradenM-micropy-stubs-30e0f6e\\stubs", ".micropy\\webserver3"],
+    "python.autoComplete.typeshedPaths":  [".micropy\\BradenM-micropy-stubs-30e0f6e\\frozen", ".micropy\\BradenM-micropy-stubs-7696565\\frozen", ".micropy\\BradenM-micropy-stubs-30e0f6e\\stubs", ".micropy\\webserver3"],
+    "python.analysis.typeshedPaths":  [".micropy\\BradenM-micropy-stubs-30e0f6e\\frozen", ".micropy\\BradenM-micropy-stubs-7696565\\frozen", ".micropy\\BradenM-micropy-stubs-30e0f6e\\stubs", ".micropy\\webserver3"],
+
+    "python.linting.pylintEnabled": true,
+    "python.languageServer": "Microsoft",
+    "python.analysis.extraPaths": [
+        ".micropy\\BradenM-micropy-stubs-30e0f6e\\frozen",
+        ".micropy\\BradenM-micropy-stubs-7696565\\frozen",
+        ".micropy\\BradenM-micropy-stubs-30e0f6e\\stubs",
+        ".micropy\\webserver3"
+    ]
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>Servo Motor Controller Webpage</title>
+</head>
+<script language="javascript">
+  function init() {
+    var scheme
+    if (window.location.protocol == 'https:')
+      scheme = 'wss:';
+    else
+      scheme = 'ws:';
+    var wsUri = scheme + '//' + window.location.hostname;
+    connectionLog("Connecting to " + wsUri + "...")
+    logMsg("Position Log:")
+    websocket = new WebSocket(wsUri);
+    websocket.onopen = function (evt) { onOpen(evt) };
+    websocket.onclose = function (evt) { onClose(evt) };
+    websocket.onmessage = function (evt) { onMessage(evt) };
+    websocket.onerror = function (evt) { onError(evt) };
+
+  }
+
+  function onOpen(evt) {
+    connectionLog("Connected");
+    barScrool(0);
+  }
+  function onClose(evt) {
+    connectionLog("Disconnected");
+  }
+  function onMessage(evt) {
+    logMsg(evt.data);
+    document.getElementById("barValue").innerHTML = "Current position: " + evt.data;
+  }
+  function onError(evt) {
+    connectionLog('ERROR -> ' + evt.data);
+  }
+
+  function connectionLog(state) {
+    document.getElementById("connectionLog").value = "Connection state: " + state;
+  }
+
+  function logMsg(s) {
+    document.getElementById("log").value += '> ' + s + '\n';
+  }
+
+  function barScrool(position) {
+    websocket.send(position);
+  }
+
+  function buttonclick() {
+    document.getElementById("log").value = "> Position Log: \n";
+  }
+  window.addEventListener("load", init, false);
+</script>
+
+<body>
+  <div id="title"> <h1>Servo Motor Controller Webpage</h1> </div>
+  <div id="scrollBar"> <input type="range" min="0" max="180" class="slider" id="barScrool" onchange="barScrool(this.value)" value="0" /> </div>
+  <div id="currentPosition"> <p id="barValue"> Current position: barValue</p> </div>
+  <textarea id="connectionLog" rows="5" cols="50">Connection state:</textarea>
+  <div width="100%"><textarea id="log" rows="10" cols="100"></textarea></div>
+  <button id="clear" onclick="buttonclick()">Delete</button>
+</body>
+
+</html>

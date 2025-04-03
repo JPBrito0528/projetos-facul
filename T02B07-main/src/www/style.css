@@ -1,0 +1,113 @@
+body {
+    background-color: #1F1F1F;
+    color: #ffffff;
+}
+
+h1 {
+    color: #D2D2D2;
+}
+
+#currentPosition {
+    color: #2EA933;
+    text-align:center;
+}
+
+#scrollBar {
+    text-align:center;
+}
+
+.slider {
+  appearance: none;
+  width: 40%; /* Full-width */
+  background: #363636; /* Grey background */
+  opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  height: 5px; /* Slider handle height */
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+
+    -webkit-appearance: none; /* Override default look */
+    width: 20px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    border-radius: 50%;
+    background: #216915; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+.slider::-moz-range-thumb {
+    background: #216915; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+#title {
+    text-align:center;
+}
+
+#title h1 {
+    margin: 30px auto 30px auto;
+    line-height:51px;
+    vertical-align:middle;
+}
+
+textarea {
+    margin: 50px 0 0 0;
+    border: none;
+    background-color: #1F1F1F;
+    color: #216915;
+    resize: none;
+    width: 100%;
+}
+
+textarea {
+    margin: 50px 0px 0px 20px;
+    border: none;
+    background-color: #1F1F1F;
+    color: #216915;
+    resize: none;
+    width: 50%;
+
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+}
+
+textarea::-webkit-scrollbar {
+    width: 10px;
+    margin: 0 50px 0 0;
+    background-color: #363636;
+    border-radius: 10px;
+    border: 1px solid #363636;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #216915;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid #216915;
+}
+
+#clear {
+    color: #216915;
+    width: 100px;
+    height: 40px;
+    margin: 20px 0 0 20px;
+    background-color: #1F1F1F;
+    border-radius: 4px;
+    border: 1px solid #216915;
+
+}
+
+#clear:hover {
+    color: #D2D2D2;
+    border: 2px solid #D2D2D2;
+}
+
+
